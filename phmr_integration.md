@@ -79,11 +79,13 @@ Use the same `<your_video_name>` as the one you used in the last step of PromptH
 cd $PATH_TO_GMR
 
 export VIDEO_NAME=<your_video_name>
+export PATH_TO_WBC=<path/to/your/GR00T-WholeBodyControl>
 
 # 2. Run the retargeting script pointing to PromptHMR results
 uv run python scripts/prompthmr_to_robot.py \
     --results_file $PATH_TO_PROMPTHMR/results/$VIDEO_NAME/results.pkl \
     --robot unitree_g1 \
+    --save_path $PATH_TO_WBC/data/$VIDEO_NAME/gmr_results.pkl \
     --person_idx 0 \
     --rate_limit
 ```
